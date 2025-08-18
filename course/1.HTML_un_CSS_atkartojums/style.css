@@ -1,0 +1,620 @@
+/* ===============================================
+   1. Base styles (light theme) and variables
+   Minimal where styling is not the point of an example.
+   =============================================== */
+:root {
+  --bg: #ffffff;
+  --surface: #f9fafb; /* subtle section background */
+  --text: #111827; /* near-black text */
+  --muted: #b1b1b1; /* grey-600 */
+  --primary: #2563eb; /* blue-600 */
+  --primary-contrast: #ffffff;
+  --ok: #16a34a; /* green-600 */
+  --warn: #d97706; /* amber-600 */
+  --bad: #dc2626; /* red-600 */
+  --card: #ffffff;
+  --border: #e5e7eb; /* grey-200 */
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg);
+}
+
+h3,
+h4 {
+  margin-top: 0;
+}
+
+.section {
+  padding: 32px 20px;
+}
+.lead {
+  color: var(--muted);
+}
+.muted {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Examples group spacing */
+.examples {
+  display: grid;
+  gap: 128px;
+  margin-top: 12px;
+}
+.example {
+  display: grid;
+  gap: 8px;
+}
+.example-title {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* Header (very minimal) */
+.topbar {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.topbar h1 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 12px;
+}
+.main-nav a {
+  color: var(--text);
+  text-decoration: none;
+  opacity: 0.9;
+}
+.main-nav a:hover,
+.main-nav a:focus {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+/* Cards and simple grids (subtle) */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  margin: 12px 0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+/* Table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.table thead th {
+  background: var(--surface);
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+}
+.table tbody td {
+  border-top: 1px solid var(--border);
+  padding: 8px 10px;
+}
+.table caption {
+  text-align: left;
+  color: var(--muted);
+  padding: 6px 0;
+}
+
+/* Form: attribute selectors and states (kept minimal) */
+.form {
+  display: grid;
+  gap: 10px;
+  max-width: 520px;
+}
+.form input,
+.form select,
+.form textarea {
+  background: #fff;
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+.form input[type="email"] {
+  border-color: #bfdbfe;
+} /* hint that attribute selectors exist */
+.form input:focus,
+.form select:focus,
+.form textarea:focus {
+  outline: 2px solid #bfdbfe;
+  outline-offset: 1px;
+}
+.form button[type="submit"] {
+  background: var(--primary);
+  color: var(--primary-contrast);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.form button[type="submit"]:hover {
+  filter: brightness(1.05);
+}
+
+/* Banner */
+.banner {
+  padding: 10px 12px;
+  border-radius: 6px;
+  margin: 12px 0;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+.banner--info {
+  background: #eef2ff;
+  border-color: #c7d2fe;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: var(--muted);
+}
+.breadcrumbs a {
+  color: var(--text);
+  text-decoration: none;
+}
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+/* CTA card & button */
+.cta {
+  text-align: center;
+}
+.btn {
+  display: inline-block;
+  background: var(--primary);
+  color: var(--primary-contrast);
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  height: 40px;
+}
+.btn:hover {
+  filter: brightness(1.05);
+}
+.btn--ghost {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+/* Avatars */
+.avatars {
+  list-style: none;
+  display: flex;
+  gap: 8px;
+  padding: 0;
+}
+.avatars img {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  display: block;
+}
+.avatars .more {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+}
+
+/* Chips */
+.chip {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  margin-right: 6px;
+}
+.chip--ok {
+  border-color: #bbf7d0;
+  color: var(--ok);
+}
+.chip--warn {
+  border-color: #fde68a;
+  color: var(--warn);
+}
+.chip--bad {
+  border-color: #fecaca;
+  color: var(--bad);
+}
+
+/* Pricing – CSS Grid + :nth-child */
+.pricing {
+  display: grid;
+  justify-content: center;
+  align-items: start;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 12px 0;
+}
+.price__title {
+  margin: 0;
+}
+.price__list {
+  list-style: none;
+  padding: 0;
+}
+.price {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  display: grid;
+  gap: 2px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+.price__value {
+  font-size: 1.6rem;
+  margin: 0;
+}
+.price--featured {
+  outline: 2px solid var(--primary);
+  position: relative;
+}
+.price--featured::before {
+  content: "Ieteikts";
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Notice (pseudo-element) */
+.notice {
+  position: relative;
+  padding: 10px 10px 10px 32px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: #ecfdf5;
+  margin: 12px 0;
+}
+.notice::before {
+  content: "✓";
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #a7f3d0;
+  color: #065f46;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+.notice--success {
+  border-color: #a7f3d0;
+}
+
+/* Progress bar */
+.progress {
+  height: 8px;
+  background: #f3f4f6;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  margin: 12px 0;
+}
+.progress__bar {
+  height: 100%;
+  width: var(--pct, 0%);
+  background: linear-gradient(90deg, var(--primary), #22c55e);
+}
+
+/* Tooltip (CSS-only :hover) */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  margin: 8px 0;
+}
+.tooltip__bubble {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(100% + 6px);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: 6px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: opacity 0.15s, transform 0.15s;
+}
+.tooltip:hover .tooltip__bubble {
+  opacity: 1;
+  transform: translate(-50%, -2px);
+}
+
+/* Tabs via :target (no JS) */
+.tabs {
+  display: inline-flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+.tab-link {
+  color: var(--text);
+  text-decoration: none;
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+}
+.tab-link:hover {
+  background: #eef2ff;
+  border-color: #c7d2fe;
+}
+.tab-panels {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px;
+  margin-top: 6px;
+  background: var(--card);
+}
+.tab {
+  display: none;
+}
+.tab:target {
+  display: block;
+}
+/* Default: show first panel when nothing targeted */
+.tab-panels .tab:first-child {
+  display: block;
+}
+
+/* Media object */
+.media {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 10px;
+  align-items: start;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px;
+  margin: 12px 0;
+}
+.media img {
+  border-radius: 6px;
+}
+
+/* FAQ details */
+.faq {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 10px;
+  margin: 8px 0;
+}
+.faq[open] {
+  outline: 2px solid #bfdbfe;
+}
+
+/* ===============================================
+   2. Complex layout — blog style (selectors showcase)
+   =============================================== */
+.layout .page {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 16px;
+}
+.sidebar {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px;
+}
+.sidebar .side-title {
+  margin: 0 0 6px 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+.sidebar .side-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sidebar .side-nav li + li {
+  margin-top: 4px;
+} /* adjacent sibling */
+.sidebar .side-nav a {
+  color: var(--text);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 0;
+}
+.sidebar .side-nav a.is-active {
+  color: var(--primary);
+  font-weight: 600;
+}
+.sidebar .side-nav a[data-badge]::after {
+  /* attribute + pseudo-element */
+  content: attr(data-badge);
+  background: #eef2ff;
+  color: #3730a3;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 999px;
+  margin-left: 6px;
+  border: 1px solid #c7d2fe;
+}
+
+/* Search form with id and :focus */
+#search {
+  margin-top: 12px;
+  display: grid;
+  gap: 6px;
+}
+#search input[type="search"] {
+  background: #fff;
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+#search input[type="search"]:focus {
+  outline: 2px solid #bfdbfe;
+}
+
+/* Content */
+.content {
+  display: grid;
+  gap: 12px;
+}
+.post {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px;
+}
+.post[data-type="news"] {
+  border-left: 3px solid #06b6d4;
+}
+.post[data-type="guide"] {
+  border-left: 3px solid #22c55e;
+}
+.post__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+}
+.post__title {
+  margin: 0;
+  font-size: 1.05rem;
+}
+.post__title a {
+  color: var(--text);
+  text-decoration: none;
+}
+.post__title a:hover {
+  text-decoration: underline;
+}
+.post__meta {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.post__list {
+  margin: 6px 0 0 18px;
+}
+.tag {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  padding: 2px 6px;
+  border-radius: 999px;
+}
+.tag--css {
+  color: #2563eb;
+  border-color: #bfdbfe;
+}
+
+/* Structural pseudo-classes */
+.content .post__list li:first-child {
+  font-weight: 600;
+}
+.content .post__list li:nth-child(2n) {
+  color: var(--muted);
+}
+
+/* Links with target attribute */
+.main-nav a[target="_blank"],
+a[target="_blank"] {
+  position: relative;
+}
+.main-nav a[target="_blank"]::after,
+a[target="_blank"]::after {
+  content: "↗";
+  margin-left: 4px;
+  font-size: 0.8em;
+  color: var(--muted);
+}
+
+/* JS selection mapping (comments only)
+   - document.getElementById("q") ⇒ #q
+   - document.getElementsByClassName("post") ⇒ .post
+   - document.querySelector(".sidebar .side-nav a.is-active") ⇒ descendant selector
+   - document.querySelectorAll(".post[data-type='news']") ⇒ attribute selector
+*/
+
+/* Utilities */
+.hidden {
+  display: none !important;
+}
+.center {
+  text-align: center;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+.footer a {
+  color: var(--text);
+}
