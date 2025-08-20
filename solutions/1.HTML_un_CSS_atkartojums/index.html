@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="lv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML un CSS atkārtojums</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar" role="banner">
+      <h1 id="kursu-virsraksts">HTML & CSS atkārtojums</h1>
+      <nav class="main-nav" aria-label="Galvenā navigācija">
+        <ul>
+          <li><a href="#tagu-galerija">Tagu galerija</a></li>
+          <li><a href="#piemeri">UI piemēri</a></li>
+          <li><a href="#sarezgita">Sarežģītāks piemērs</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ============================= -->
+    <!-- 1) POPULĀRĀKO TAGU GALERIJA   -->
+    <!-- ============================= -->
+    <section id="tagu-galerija" class="section">
+      <h2>Populārāko tagu piemēri</h2>
+      <p class="lead">
+        Šeit īsi demonstrēti bieži lietoti HTML elementi. Pievērs uzmanību
+        semantikai.
+      </p>
+
+      <article class="card">
+        <h3>Teksta elementi</h3>
+        <p>
+          <strong>Strong</strong>, <em>emphasis</em>, <u>underline</u>,
+          <mark>mark</mark>, <small>small</small>, <code>&lt;code&gt;</code>,
+          <kbd>Ctrl</kbd> + <kbd>C</kbd>
+        </p>
+        <blockquote cite="https://developer.mozilla.org/">
+          “Good markup is accessible, semantic and simple.”
+        </blockquote>
+        <pre><code>&lt;h1&gt;..&lt;/h1&gt;, &lt;p&gt;..&lt;/p&gt;</code></pre>
+      </article>
+
+      <article class="card">
+        <h3>Saraksti</h3>
+        <div class="grid-2">
+          <div>
+            <h4>• Nesarindots</h4>
+            <ul>
+              <li>Elements</li>
+              <li>Vēl viens</li>
+              <li>Trešais</li>
+            </ul>
+          </div>
+          <div>
+            <h4>1. Sarindots</h4>
+            <ol>
+              <li>Pirmais</li>
+              <li>Otrais</li>
+              <li>Trešais</li>
+            </ol>
+          </div>
+        </div>
+        <dl>
+          <dt>HTML</dt>
+          <dd>Marķēšanas valoda</dd>
+          <dt>CSS</dt>
+          <dd>Stilu valoda</dd>
+        </dl>
+      </article>
+
+      <article class="card">
+        <h3>Attēli un figūras</h3>
+        <figure>
+          <img src="https://placehold.co/600x400" alt="Piemēra attēls" />
+          <figcaption>
+            Vienkāršs <code>&lt;figure&gt;</code> ar
+            <code>&lt;figcaption&gt;</code>
+          </figcaption>
+        </figure>
+      </article>
+
+      <article class="card">
+        <h3>Tabulas</h3>
+        <table class="table">
+          <caption>
+            Neliela tabula
+          </caption>
+          <thead>
+            <tr>
+              <th>Vārds</th>
+              <th>Amats</th>
+              <th>St.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Jana</td>
+              <td>Skolotāja</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Juris</td>
+              <td>Pasniedzējs</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Jūlija</td>
+              <td>Mentore</td>
+              <td>1.5</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article class="card">
+        <h3>Formas</h3>
+        <form class="form" action="#" method="post">
+          <label for="vards">Vārds</label>
+          <input
+            id="vards"
+            name="vards"
+            type="text"
+            placeholder="Ievadi vārdu"
+            required
+          />
+
+          <label for="epasts">E-pasts</label>
+          <input
+            id="epasts"
+            name="epasts"
+            type="email"
+            placeholder="vards@skola.lv"
+          />
+
+          <div class="grid-2">
+            <div>
+              <label
+                ><input type="radio" name="tips" value="skolotajs" checked />
+                Skolotājs</label
+              >
+            </div>
+            <div>
+              <label
+                ><input type="radio" name="tips" value="students" />
+                Students</label
+              >
+            </div>
+          </div>
+
+          <label for="temas">Tēma</label>
+          <select id="temas" name="tema">
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="js">JavaScript</option>
+          </select>
+
+          <label for="zinojums">Ziņojums</label>
+          <textarea
+            id="zinojums"
+            name="zinojums"
+            rows="3"
+            placeholder="Tavs ziņojums…"
+          ></textarea>
+
+          <button type="submit">Sūtīt</button>
+        </form>
+      </article>
+
+      <article class="card">
+        <h3>Multivide</h3>
+        <details>
+          <summary>Parādīt video/audio piemērus</summary>
+          <video controls width="320">
+            <source src="" type="video/mp4" />
+            Tava pārlūkprogramma neatbalsta video tagu.
+          </video>
+          <audio controls>
+            <source src="" type="audio/mpeg" />
+            Tava pārlūkprogramma neatbalsta audio tagu.
+          </audio>
+        </details>
+      </article>
+    </section>
+
+    <!-- ============================= -->
+    <!-- 2) REĀLISTISKI UI PIEMĒRI    -->
+    <!-- ============================= -->
+    <section id="piemeri" class="section">
+      <h2>HTML+CSS piemēri</h2>
+      <p class="muted">No vienkāršāka uz sarežģītāku (bez JavaScript).</p>
+      <div class="examples">
+        <!-- 1. Paziņojumu josla -->
+        <section class="example">
+          <h4 class="example-title">1. Paziņojumu josla</h4>
+          <div class="banner banner--info" role="status">
+            <strong>Info:</strong> Kursa demonstrācijas un piemēri pieejami mapē
+            "demos".
+          </div>
+        </section>
+
+        <!-- 2. Maizes drupačas (breadcrumbs) -->
+        <section class="example">
+          <h4 class="example-title">2. Breadcrumbs (Navigācijas josla)</h4>
+          <nav aria-label="Ceļš" class="breadcrumbs">
+            <a href="#">Sākums</a>
+            <span aria-hidden="true">/</span>
+            <a href="#">Kursi</a>
+            <span aria-hidden="true">/</span>
+            <span>JavaScript pamati</span>
+          </nav>
+        </section>
+
+        <!-- 3. CTA karte -->
+        <section class="example">
+          <h4 class="example-title">3. CTA karte</h4>
+          <div class="card cta">
+            <h3>Lejupielādē materiālus</h3>
+            <p>README, uzdevumi un risinājumi vienuviet.</p>
+            <a class="btn" href="#">Lejupielādēt</a>
+          </div>
+        </section>
+
+        <!-- 4. Avatāru saraksts -->
+        <section class="example">
+          <h4 class="example-title">4. Avatāru saraksts</h4>
+          <ul class="avatars" aria-label="Dalībnieki">
+            <li><img src="https://i.pravatar.cc/64?img=1" alt="Anna" /></li>
+            <li><img src="https://i.pravatar.cc/64?img=2" alt="Mārtiņš" /></li>
+            <li><img src="https://i.pravatar.cc/64?img=3" alt="Līga" /></li>
+            <li class="more" aria-label="Vēl 12">+12</li>
+          </ul>
+        </section>
+
+        <!-- 5. Statusa čipi -->
+        <section class="example">
+          <h4 class="example-title">5. Statusa čipi</h4>
+          <p>
+            <span class="chip chip--ok">Gatavs</span>
+            <span class="chip chip--warn">Procesā</span>
+            <span class="chip chip--bad">Kavējas</span>
+          </p>
+        </section>
+
+        <!-- 6. Cenu tabula -->
+        <section class="example">
+          <h4 class="example-title">6. Cenu tabula</h4>
+          <div class="pricing">
+            <article class="price">
+              <h4 class="price__title">Starter</h4>
+              <p class="price__value">€0</p>
+              <ul class="price__list">
+                <li>PDF materiāli</li>
+                <li>1 ned. e-pasta atbalsts</li>
+              </ul>
+              <a href="#" class="btn btn--ghost">Sākt</a>
+            </article>
+            <article class="price price--featured" aria-label="Ieteiktais">
+              <h4 class="price__title">Pro</h4>
+              <p class="price__value">€29</p>
+              <ul class="price__list">
+                <li>Visi materiāli</li>
+                <li>3 ned. atbalsts</li>
+              </ul>
+              <a href="#" class="btn">Izvēlēties</a>
+            </article>
+            <article class="price">
+              <h4 class="price__title">Team</h4>
+              <p class="price__value">€99</p>
+              <ul class="price__list">
+                <li>Komandas licence</li>
+                <li>1 mēn. atbalsts</li>
+              </ul>
+              <a href="#" class="btn btn--ghost">Pievienoties</a>
+            </article>
+          </div>
+        </section>
+
+        <!-- 7. Notifikāciju karte ar pseudo-elementiem -->
+        <section class="example">
+          <h4 class="example-title">
+            7. Notifikāciju karte ar pseudo-elementiem
+          </h4>
+          <div class="notice notice--success">
+            <p><strong>Veiksmīgi!</strong> Jūsu iestatījumi saglabāti.</p>
+          </div>
+        </section>
+
+        <!-- 8. Progresjosla (tikai CSS) -->
+        <section class="example">
+          <h4 class="example-title">8. Progresjosla (tikai CSS)</h4>
+          <div class="progress" aria-label="Progress 70%">
+            <div class="progress__bar" style="--pct: 70%"></div>
+          </div>
+        </section>
+
+        <!-- 9. Tooltip (tikai CSS :hover) -->
+        <section class="example">
+          <h4 class="example-title">9. Tooltip (CSS :hover)</h4>
+          <p class="tooltip">
+            Novieto peli šeit
+            <span class="tooltip__bubble">Šis ir CSS tooltip</span>
+          </p>
+        </section>
+
+        <!-- 10. Karte ar attēlu un saturu (media object) -->
+        <section class="example">
+          <h4 class="example-title">
+            10. Karte ar attēlu un saturu (media object)
+          </h4>
+          <article class="media">
+            <img src="https://placehold.co/96" alt="Ikona" />
+            <div>
+              <h4>Media objekts</h4>
+              <p>Klasiskais attēls + saturs izvietojums.</p>
+            </div>
+          </article>
+        </section>
+
+        <!-- 11. FAQ ar <details> -->
+        <section class="example">
+          <h4 class="example-title">11. FAQ ar &lt;details&gt;</h4>
+          <details class="faq">
+            <summary>Kas ir DOM?</summary>
+            <p>
+              Dokumenta objekta modelis – HTML kā koka struktūra, ko JS var
+              mainīt.
+            </p>
+          </details>
+        </section>
+      </div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- 3) SAREŽĢĪTĀKA STRUKTŪRA AR KLASĒM UN ID -->
+    <!-- ========================================= -->
+    <section
+      id="sarezgita"
+      class="section layout"
+      aria-labelledby="layout-title"
+    >
+      <h2 id="layout-title">Bloga izkārtojums (sarežģītāks piemērs)</h2>
+      <div id="page" class="page">
+        <aside id="sidebar" class="sidebar" aria-label="Sānu josla">
+          <nav class="side-nav">
+            <h3 class="side-title">Sadaļas</h3>
+            <ul>
+              <li><a href="#" class="is-active">Jaunumi</a></li>
+              <li><a href="#">Pamācības</a></li>
+              <li><a href="#">Piemēri</a></li>
+              <li><a href="#" data-badge="5">Komentāri</a></li>
+            </ul>
+          </nav>
+
+          <form id="search" class="search" role="search">
+            <label for="q">Meklēt</label>
+            <input id="q" name="q" type="search" placeholder="Atslēgvārds" />
+          </form>
+        </aside>
+
+        <main id="content" class="content" role="main">
+          <article class="post" data-type="guide">
+            <header class="post__header">
+              <h3 class="post__title"><a href="#">Kā strukturēt HTML</a></h3>
+              <p class="post__meta">
+                Publicēts <time datetime="2025-08-15">19.08.2025</time> •
+                <span class="tag">#HTML</span>
+              </p>
+            </header>
+            <p>
+              Semantiski tagi (<code>header</code>, <code>nav</code>,
+              <code>section</code>, <code>article</code>, <code>aside</code>,
+              <code>footer</code>) palīdz lasāmībai un piekļūstamībai.
+            </p>
+          </article>
+
+          <article class="post" data-type="news">
+            <header class="post__header">
+              <h3 class="post__title"><a href="#">CSS selektori praksē</a></h3>
+              <p class="post__meta">• <span class="tag tag--css">#CSS</span></p>
+            </header>
+            <ul class="post__list">
+              <li>Grupu atlase: <code>.klase .bērns</code></li>
+              <li>Tiešais bērns: <code>.konteiners &gt; .elements</code></li>
+              <li>Blakus brālis: <code>h2 + p</code></li>
+              <li>
+                Attribute: <code>a[target="_blank"]</code>,
+                <code>input[type="email"]</code>
+              </li>
+              <li>
+                Stāvokļi: <code>:hover</code>, <code>:focus</code>,
+                <code>:disabled</code>
+              </li>
+              <li>
+                Strukturālie: <code>:nth-child(2n)</code>,
+                <code>:first-child</code>
+              </li>
+            </ul>
+          </article>
+        </main>
+      </div>
+    </section>
+
+    <section id="js-uzdevums" class="section">
+      <h2>Uzdevums: Pievieno JavaScript</h2>
+      <article class="card">
+        <p>
+          Šajā mapē jau ir fails <code>script.js</code>. Tavs uzdevums –
+          pievienot šo failu lapai, lai JavaScript tiktu ielādēts un izpildīts.
+        </p>
+        <h3>Soļi</h3>
+        <ol>
+          <li>Atver šo failu: <code>index.html</code>.</li>
+          <li>
+            Pievieno <code>&lt;script&gt;</code> elementu ar atsauci uz
+            <code>script.js</code>.
+          </li>
+          <li>Saglabā un pārlādē lapu pārlūkā.</li>
+        </ol>
+        <h4>Kas tieši jādara?</h4>
+        <p>Pirms <code>&lt;/body&gt;</code> taga ievieto sekojošo:</p>
+        <pre><code>&lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+        <p>
+          Pēc pievienošanas, ielādējot lapu, būtu jāredz paziņojums no
+          <code>script.js</code>.
+        </p>
+      </article>
+    </section>
+
+    <footer class="footer" role="contentinfo">
+      <a href="#tagu-galerija">Uz augšu ↑</a>
+      <p>Atis Ozols - JavaScript pamati (2025)</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

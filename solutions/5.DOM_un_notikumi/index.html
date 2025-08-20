@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="lv">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM un notikumi</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>DOM un notikumi</h1>
+    <p>
+      Atver konsoli (F12 → Console), lai redzētu uzdevumu norādes/rezultātus.
+    </p>
+
+    <button id="demoBtn">Poga demonstrācijai</button>
+
+    <p id="atsauksme" class="muted">Sākotnējais teksts</p>
+
+    <section id="ui">
+      <button id="btnText">Mainīt tekstu</button>
+      <button id="btnToggle">Pārslēgt izcelšanu</button>
+      <button id="btnAdd">Pievienot vienumu</button>
+      <button id="btnRemove">Noņemt pēdējo</button>
+    </section>
+
+    <div class="row">
+      <input id="ievade" placeholder="Ieraksti vārdu..." />
+      <div id="output" class="output"></div>
+    </div>
+
+    <ul id="saraksts" class="items">
+      <li class="item">Vienums 1</li>
+      <li class="item">Vienums 2</li>
+      <li class="item">Vienums 3</li>
+    </ul>
+
+    <div id="hoverZona" class="hover-zone" tabindex="0">Pārvieto peli šeit</div>
+
+    <section id="kartinu-konteiners" class="cards">
+      <div class="card">1</div>
+      <div class="card">2</div>
+      <div class="card">3</div>
+    </section>
+
+    <form id="forma">
+      <input id="vards" placeholder="Vārds" />
+      <input id="epasts" placeholder="E-pasts" />
+      <button type="submit">Sūtīt</button>
+    </form>
+
+    <script src="script.js"></script>
+  </body>
+</html>
